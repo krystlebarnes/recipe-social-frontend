@@ -1,7 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 
-function App() {
+class App extends React.Component {
+  componentDidMount(){
+    fetch("http://localhost:3000/api/v1/users/1")
+      .then(r=>r.json())
+      .then(console.log)
+  }
   return (
     <div className="App">
       <header className="App-header">
