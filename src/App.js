@@ -6,7 +6,7 @@ import { getCurrentUser } from './actions/currentUser.js'
 
 class App extends React.Component {
 
-  componendDidMount() {
+  componentDidMount() {
     this.props.getCurrentUser()
   }
 
