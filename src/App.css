@@ -37,7 +37,7 @@
   }
 }
 
-.navbar {
+.NavBar {
   display: flex;
   flex-direction: row;
 }
