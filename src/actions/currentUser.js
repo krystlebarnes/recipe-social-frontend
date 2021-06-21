@@ -1,3 +1,5 @@
+import { resetLoginForm } from './loginForm.js'
+
 export const setCurrentUser = user => {
     return {
         type: "SET_CURRENT_USER",
@@ -22,11 +24,12 @@ export const login = credentials => {
             body: JSON.stringify(credentials)
         })
         .then(r => r.json())
-        .then(user => {
-            if (user.error) {
-                alert(user.error)
+        .then(r => {
+            if (r.error) {
+                alert(r.error)
             } else {
-                dispatch(setCurrentUser(user))
+                dispatch(setCurrentUser(r.data))
+                dispatch(resetLoginForm())
             }
         })
         .catch(console.log)
@@ -53,11 +56,11 @@ export const getCurrentUser = () => {
             },
         })
         .then(r => r.json())
-        .then(user => {
-            if (user.error) {
-                alert(user.error)
+        .then(r => {
+            if (r.error) {
+                alert(r.error)
             } else {
-                dispatch(setCurrentUser(user))
+                dispatch(setCurrentUser(r.data))
             }
         })
         .catch(console.log)
