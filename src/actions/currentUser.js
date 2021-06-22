@@ -1,4 +1,5 @@
 import { resetLoginForm } from './loginForm.js'
+import { getRecipes  } from './recipes.js'
 
 export const setCurrentUser = user => {
     return {
@@ -29,6 +30,7 @@ export const login = credentials => {
                 alert(r.error)
             } else {
                 dispatch(setCurrentUser(r.data))
+                dispatch(getRecipes())
                 dispatch(resetLoginForm())
             }
         })
@@ -61,6 +63,7 @@ export const getCurrentUser = () => {
                 alert(r.error)
             } else {
                 dispatch(setCurrentUser(r.data))
+                dispatch(getRecipes())
             }
         })
         .catch(console.log)

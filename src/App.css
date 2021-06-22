@@ -40,4 +40,19 @@
 .NavBar {
   display: flex;
   flex-direction: row;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+.RecipeCard {
+  width: 30%;
+}
+
+.RecipeCard img {
+  width: 100%;
+}
+
+.RecipeCard h3 {
+  margin-top: .5em;
+  margin-bottom: .5em;
 }
