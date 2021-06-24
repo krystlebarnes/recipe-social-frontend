@@ -1,13 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Login from "./Login.js"
 import Logout from "./Logout.js"
 
 const NavBar = ({ currentUser }) => {
   return (
     <div className="NavBar">
       { currentUser ? <span>Hi {currentUser.attributes.name}!</span> : "" }
-      { currentUser ? <Logout/> : <Login/> }
+      { currentUser ? <Logout/> : null }
     </div>
   )
 }
