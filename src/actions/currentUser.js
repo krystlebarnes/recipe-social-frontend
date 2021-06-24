@@ -40,6 +40,9 @@ export const login = credentials => {
 }
 
 export const signup = credentials => {
+    const user = {
+        user: credentials
+    }
     return dispatch => {
         return fetch("http://localhost:3000/api/v1/signup", {
             credentials: "include",
@@ -47,7 +50,7 @@ export const signup = credentials => {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(credentials)
+            body: JSON.stringify(user)
         })
         .then(r => r.json())
         .then(r => {
