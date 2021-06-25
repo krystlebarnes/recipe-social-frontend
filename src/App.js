@@ -7,7 +7,8 @@ import NavBar from './components/NavBar.js';
 import Home from './components/Home.js';
 import Login from './components/Login.js';
 import Signup from './components/Signup.js';
-import MainContainer from './components/MainContainer.js';
+import Recipes from './components/Recipes.js';
+import RecipeForm from './components/RecipeForm.js';
 
 class App extends React.Component {
 
@@ -21,9 +22,11 @@ class App extends React.Component {
       <div className="App">
         { loggedIn ? <NavBar /> : null }
         <Switch>
-        <Route exact path='/' render={(props)=> loggedIn ? <MainContainer { ...props }/> : <Home { ...props } />} />
-        <Route exact path='/login' component={ Login } />
-        <Route exact path='/signup' component={ Signup } />
+          <Route exact path='/' render={(props)=> loggedIn ? <Recipes { ...props }/> : <Home { ...props } />} />
+          <Route exact path='/login' component={ Login } />
+          <Route exact path='/signup' component={ Signup } />
+          <Route exact path='/recipes' component={ Recipes } />
+          <Route exact path='/recipes' component={ RecipeForm } />
         </Switch>
       </div>
     );
