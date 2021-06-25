@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { updateSignupForm } from '../actions/signupForm.js'
 import { signup } from '../actions/currentUser.js'
 
-const Signup = ({ signupData, updateSignupForm, signup }) => {
+const Signup = ({ signupData, updateSignupForm, signup, history }) => {
 
     const handleChange = event => {
         const { name, value } = event.target
@@ -16,7 +16,7 @@ const Signup = ({ signupData, updateSignupForm, signup }) => {
 
     const handleSubmit = event => {
         event.preventDefault()
-        signup(signupData)
+        signup(signupData, history)
     }
 
     return (
