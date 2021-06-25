@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import { getCurrentUser } from './actions/currentUser.js';
 import NavBar from './components/NavBar.js';
 import Home from './components/Home.js';
@@ -37,4 +37,4 @@ const mapStateToProps = state => {
   })
 }
 
-export default connect(mapStateToProps, { getCurrentUser })(App);
+export default withRouter(connect(mapStateToProps, { getCurrentUser })(App));
