@@ -20,9 +20,9 @@ const IngredientForm = ({ formData, updateIngredientForm, recipeId, handleSubmit
             }}>
                 <input placeholder="qty" value={quantity} name="quantity" type="text" onChange={handleChange} />
                 <input placeholder="unit" value={unit} name="unit" type="text" onChange={handleChange} />
-                <textarea placeholder="item" value={item} name="item" onChange={handleChange} />
-                <input placeholder="notes" value={notes} name="notes" type="text" onChange={handleChange} />minutes
-                <p><input type="submit" value={editMode ? "Edit" : "Add" }/></p>
+                <input placeholder="item" value={item} name="item" type="text" onChange={handleChange} />
+                <input placeholder="notes" value={notes} name="notes" type="text" onChange={handleChange} />
+                <input type="submit" value={editMode ? "Edit" : "Add" }/>
             </form>
         </div>
     )
