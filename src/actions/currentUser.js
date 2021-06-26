@@ -1,6 +1,6 @@
 import { resetLoginForm } from './loginForm.js'
 import { resetSignupForm } from './signupForm.js'
-import { getRecipes  } from './recipes.js'
+import { getRecipes  } from './getRecipes.js'
 
 export const setCurrentUser = user => {
     return {
