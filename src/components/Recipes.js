@@ -8,9 +8,9 @@ const Recipes = props => {
   return recipeCards
 }
 
-const mapStateToProps = ({ recipes }) => {
+const mapStateToProps = state => {
   return {
-    recipes
+    recipes: state.recipes
   }
 }
 
