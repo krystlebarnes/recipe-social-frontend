@@ -54,7 +54,8 @@ const RecipeForm = ({ formData, updateRecipeForm, authorId, handleSubmit, editMo
                 <br></br>
                 <input placeholder="0" value={calories} name="calories" type="text" onChange={handleChange} />
                 </p>
-                
+                <p>Ingredients:</p>
+                <p>Instructions:</p>
                 <p><input type="submit" value="Save"/></p>
             </form>
         </div>
