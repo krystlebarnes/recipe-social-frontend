@@ -29,12 +29,7 @@ class App extends React.Component {
           <Route exact path='/signup' component={ Signup } />
           <Route exact path='/recipes' component={ Recipes } />
           <Route exact path='/recipes/new' component={ NewRecipeFormWrapper } />
-          <Route exact path='/recipes/:id'render={props => {
-              const recipe = recipes.find(recipe => recipe.id === props.match.params.id)
-              console.log(recipe)
-              return <RecipeDetails recipe={recipe} {...props}/>
-            }
-          } />
+          <Route exact path='/recipes/:id' render={props => <RecipeDetails {...props} recipes={this.props.recipes}/>} />
           {/* <Route exact path='/recipes/:id/edit' render={props => {
               const recipe = recipes.find(recipe => recipe.id === props.match.params.id)
               return <EditRecipeFormWrapper recipe={recipe} {...props}/>

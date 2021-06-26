@@ -2,7 +2,13 @@ import React from 'react'
 import currentUser from '../reducers/currentUser'
 import { Link } from 'react-router-dom'
 
-const RecipeDetails = ({ recipe }) => {
+const RecipeDetails = (props) => {
+
+    console.log(props)
+
+    let recipe = props.recipes.filter(recipe => recipe.id == props.match.params.id)[0]
+
+
     return (
         <div className="RecipeDetails">
             { currentUser.id === recipe.attributes.author_id ? <Link to={`/recipes/${recipe.id}/edit`}>Edit this recipe.</Link> : ""}
