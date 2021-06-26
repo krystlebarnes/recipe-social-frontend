@@ -1,3 +1,5 @@
+import { resetRecipeForm } from './recipeForm.js'
+
 export const addRecipe = (recipeData, history) => {
     return dispatch => {
         const newRecipe = {

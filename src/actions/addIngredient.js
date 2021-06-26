@@ -1,3 +1,5 @@
+import { resetIngredientForm } from './ingredientForm.js'
+
 export const addIngredient = (ingredientData, history) => {
     return dispatch => {
         const newIngredient = {
