@@ -1,9 +1,10 @@
 import React from 'react'
 import currentUser from '../reducers/currentUser'
+import { Link } from 'react-router-dom'
 
 const RecipeDetails = ({ recipe }) => {
     return (
-        <div class="RecipeDetails">
+        <div className="RecipeDetails">
             { currentUser.id === recipe.attributes.author_id ? <Link to={`/recipes/${recipe.id}/edit`}>Edit this recipe.</Link> : ""}
             <h2>{ recipe.attributes.name }</h2>
             <img src={ recipe.attributes.image_url }></img>
