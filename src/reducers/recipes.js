@@ -3,7 +3,7 @@ export default (state = [], action) => {
         case "SET_RECIPES":
             return action.recipes
         case "ADD_RECIPE":
-            return state.concat(action.trip)
+            return state.concat(action.recipe)
         case "EDIT_RECIPE":
             return state.map(recipe => recipe.id === action.recipe.id ? action.recipe : recipe)
         case "DELETE_RECIPE":
