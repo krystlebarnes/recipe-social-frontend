@@ -8,7 +8,9 @@ import Home from './components/Home.js';
 import Login from './components/Login.js';
 import Signup from './components/Signup.js';
 import Recipes from './components/Recipes.js';
-import RecipeForm from './components/RecipeForm.js';
+import NewRecipeFormWrapper from './components/NewRecipeFormWrapper.js';
+import RecipeDetails from './components/RecipeDetails.js';
+import EditRecipeFormWrapper from './components/EditRecipeFormWrapper.js'
 
 class App extends React.Component {
 
@@ -26,7 +28,19 @@ class App extends React.Component {
           <Route exact path='/login' component={ Login } />
           <Route exact path='/signup' component={ Signup } />
           <Route exact path='/recipes' component={ Recipes } />
-          <Route exact path='/recipes' component={ RecipeForm } />
+          <Route exact path='/recipes/new' component={ NewRecipeFormWrapper } />
+          <Route exact path='/recipes/:id'render={props => {
+              const recipe = recipes.find(recipe => recipe.id === props.match.params.id)
+              console.log(recipe)
+              return <RecipeDetails recipe={recipe} {...props}/>
+            }
+          } />
+          {/* <Route exact path='/recipes/:id/edit' render={props => {
+              const recipe = recipes.find(recipe => recipe.id === props.match.params.id)
+              return <EditRecipeFormWrapper recipe={recipe} {...props}/>
+            }
+          }/> */}
+          
         </Switch>
       </div>
     );
@@ -36,7 +50,8 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
   return ({
-   loggedIn: !!state.currentUser
+   loggedIn: !!state.currentUser,
+   recipes: state.recipes
   })
 }
 
