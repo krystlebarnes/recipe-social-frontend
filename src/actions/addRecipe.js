@@ -6,7 +6,7 @@ export const addRecipe = (recipeData, history) => {
             name: recipeData.name,
             image_url: recipeData.imageURL,
             description: recipeData.description,
-            prep_time: recipedData.prepTime,
+            prep_time: recipeData.prepTime,
             cook_time: recipeData.cookTime,
             serving_size: recipeData.servingSize,
             calories: recipeData.calories,
