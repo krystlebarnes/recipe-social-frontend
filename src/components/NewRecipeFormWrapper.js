@@ -1,6 +1,6 @@
 import React from 'react';
 import RecipeForm from './RecipeForm'
-import { addRecipe } from '../actions/recipes.js'
+import { addRecipe } from '../actions/addRecipe.js'
 import { connect } from 'react-redux'
 
 const NewRecipeFormWrapper = ({ history, addRecipe }) => {
