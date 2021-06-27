@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: whitesmoke;
 }
 
 .App-logo {
@@ -40,12 +41,19 @@
 .NavBar {
   display: flex;
   flex-direction: row;
-  padding-top: 10px;
-  padding-bottom: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: white;
+  border: 1px solid lightgray;
+  margin-bottom: 30px;
 }
 
 .RecipeCard {
   width: 30%;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  margin: auto;
 }
 
 .RecipeCard img {
@@ -55,4 +63,18 @@
 .RecipeCard h3 {
   margin-top: .5em;
   margin-bottom: .5em;
+}
+
+.RecipeDetails {
+  width: 70%;
+  background-color: white;
+  margin: auto;
+  border: 1px solid lightgray;
+  padding: 50px;
+  border-radius: 3px;
+  text-align: left;
+}
+
+.RecipeDetails img{
+  width: 25%;
 }
