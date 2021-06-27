@@ -48,12 +48,26 @@
   margin-bottom: 30px;
 }
 
+.NavBar h3 {
+  margin: 0 15px;
+  padding: 0;
+  color: rgb(236, 131, 82);
+  font-family: Brush Script MT;
+  font-size: 2.2em
+}
+
+.NavBar span {
+  margin: 13px 10px 0px 20px;
+  text-align: right;
+}
+
 .RecipeCard {
   width: 30%;
   background-color: white;
   border: 1px solid lightgray;
   border-radius: 3px;
   margin: auto;
+  padding: 15px;
 }
 
 .RecipeCard img {
@@ -75,6 +89,25 @@
   text-align: left;
 }
 
-.RecipeDetails img{
+.RecipeDetails img {
   width: 25%;
+}
+
+.RecipeForm {
+  width: 70%;
+  background-color: white;
+  margin: auto;
+  border: 1px solid lightgray;
+  padding: 50px;
+  border-radius: 3px;
+  text-align: left;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color:rgb(236, 131, 82)
 }
