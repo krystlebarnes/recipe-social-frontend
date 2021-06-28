@@ -8,7 +8,8 @@ import Home from './components/Home.js';
 import Login from './components/Login.js';
 import Signup from './components/Signup.js';
 import Recipes from './components/Recipes.js';
-import NewRecipeFormWrapper from './components/NewRecipeFormWrapper.js';
+// import NewRecipeFormWrapper from './components/NewRecipeFormWrapper.js';
+import NewRecipe from './components/NewRecipe.js';
 import RecipeDetails from './components/RecipeDetails.js';
 import EditRecipeFormWrapper from './components/EditRecipeFormWrapper.js'
 
@@ -28,8 +29,9 @@ class App extends React.Component {
           <Route exact path='/login' component={ Login } />
           <Route exact path='/signup' component={ Signup } />
           <Route exact path='/recipes' component={ Recipes } />
-          <Route exact path='/recipes/new' component={ NewRecipeFormWrapper } />
+          <Route exact path='/recipes/new' component={ NewRecipe } />
           <Route exact path='/recipes/:id' render={props => <RecipeDetails {...props} recipes={this.props.recipes}/>} />
+          <Route exact path='/recipes/:id/edit' render={props => <EditRecipeFormWrapper {...props} recipes={this.props.recipes}/>} />
           {/* <Route exact path='/recipes/:id/edit' render={props => {
               const recipe = recipes.find(recipe => recipe.id === props.match.params.id)
               return <EditRecipeFormWrapper recipe={recipe} {...props}/>

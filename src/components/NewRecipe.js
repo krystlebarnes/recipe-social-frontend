@@ -4,15 +4,19 @@ import { addRecipe } from '../actions/addRecipe.js'
 
 class NewRecipe extends React.Component {
 
-    state = {
-        name: '',
-        imageURL: '',
-        description: '',
-        prepTime: '',
-        cookTime: '',
-        servingSize: '',
-        calories: '',
-        authorId: ''
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            name: '',
+            imageURL: '',
+            description: '',
+            prepTime: '',
+            cookTime: '',
+            servingSize: '',
+            calories: '',
+            authorId: props.currentUser.id
+        };
     }
 
     handleChange = (event) => {
@@ -24,16 +28,16 @@ class NewRecipe extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault()
         this.props.addRecipe(this.state)
-        this.setState({
-            name: '',
-            imageURL: '',
-            description: '',
-            prepTime: '',
-            cookTime: '',
-            servingSize: '',
-            calories: '',
-            authorId: ''
-        })
+        // this.setState({
+        //     name: '',
+        //     imageURL: '',
+        //     description: '',
+        //     prepTime: '',
+        //     cookTime: '',
+        //     servingSize: '',
+        //     calories: '',
+        //     authorId: ''
+        // })
     }
 
     render() {
@@ -85,4 +89,12 @@ class NewRecipe extends React.Component {
     }
 }
 
-export default connect(null, { addRecipe })(NewRecipe)
+const mapStateToProps = state => {
+    const authorId = state.currentUser ? state.currentUser.id : ""
+    return {
+     authorId
+    //  recipes: state.recipes
+    }
+  }
+
+export default connect(mapStateToProps, { addRecipe })(NewRecipe)

@@ -1,6 +1,6 @@
-import { resetRecipeForm } from './recipeForm.js'
+// import { resetRecipeForm } from './recipeForm.js'
 
-export const addRecipe = (recipeData, history) => {
+export const addRecipe = (recipeData) => {
     return dispatch => {
         const newRecipe = {
             name: recipeData.name,
@@ -12,23 +12,24 @@ export const addRecipe = (recipeData, history) => {
             calories: recipeData.calories,
             author_id: recipeData.authorId
         }
+        debugger
+    
         return fetch("http://localhost:3000/api/v1/recipes", {
-            credentials: "include",
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Accept": "application/json"
             },
             body: JSON.stringify(newRecipe)
         })
         .then(r => r.json())
-        .then(r => {
-            if (r.error) {
-                alert(r.error)
+        .then(recipe => {
+            if (recipe.error) {
+                alert(recipe.error)
             } else {
-                const recipe = r.data
-                dispatch({type: 'ADD_RECIPE', recipe})
-                dispatch(resetRecipeForm())
-                history.push(`/recipes/${r.data.id}`)
+                dispatch({type: 'ADD_RECIPE', payload: recipe})
+                // dispatch(resetRecipeForm())
+                // history.push(`/recipes/${r.data.id}`)
             }
         })
         .catch(console.log)

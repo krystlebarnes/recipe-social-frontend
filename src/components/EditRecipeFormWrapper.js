@@ -7,6 +7,9 @@ import { setFormData, resetRecipeForm } from '../actions/recipeForm.js'
 
 
 class EditRecipeFormWrapper extends React.Component {
+
+  // recipe = props.recipes.filter(recipe => recipe.id == props.match.params.id)[0]
+
   componentDidMount(){
     this.props.recipe && this.props.setFormData(this.props.recipe)
   }
