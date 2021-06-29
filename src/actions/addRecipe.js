@@ -10,10 +10,9 @@ export const addRecipe = (recipeData) => {
             cook_time: recipeData.cookTime,
             serving_size: recipeData.servingSize,
             calories: recipeData.calories,
-            author_id: recipeData.authorId
+            author_id: parseInt(recipeData.authorId)
         }
-        debugger
-    
+        
         return fetch("http://localhost:3000/api/v1/recipes", {
             method: "POST",
             headers: {

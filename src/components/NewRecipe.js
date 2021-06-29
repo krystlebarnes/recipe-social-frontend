@@ -14,8 +14,7 @@ class NewRecipe extends React.Component {
             prepTime: '',
             cookTime: '',
             servingSize: '',
-            calories: '',
-            authorId: props.currentUser.id
+            calories: ''
         };
     }
 
@@ -27,7 +26,7 @@ class NewRecipe extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.addRecipe(this.state)
+        this.props.addRecipe({...this.state, authorId: this.props.authorId})
         // this.setState({
         //     name: '',
         //     imageURL: '',
