@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { editRecipe } from '../actions/editRecipe.js' 
-// import { deleteRecipe } from '../actions/deleteRecipe.js'
+import { deleteRecipe } from '../actions/deleteRecipe.js'
 // import { setFormData, resetRecipeForm } from '../actions/recipeForm.js'
 
 class EditRecipe extends React.Component {
@@ -47,7 +47,6 @@ class EditRecipe extends React.Component {
     }
 
     render() {
-        console.log(this.state.id)
         return (
             <div className="RecipeForm">
                 <h2>Edit Recipe</h2>
@@ -91,9 +90,10 @@ class EditRecipe extends React.Component {
                     <p>Instructions:</p>
                     <p><input type="submit" value="Save"/></p>
                 </form>
+                <button onClick={()=>this.props.deleteRecipe(this.state.id, this.props.history)}>Delete Recipe</button>
             </div>
         )
     }
 }
 
-export default connect(null, { editRecipe })(EditRecipe)
+export default connect(null, { editRecipe, deleteRecipe })(EditRecipe)
