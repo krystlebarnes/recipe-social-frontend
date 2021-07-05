@@ -26,17 +26,7 @@ class NewRecipe extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.addRecipe({...this.state, authorId: this.props.authorId})
-        // this.setState({
-        //     name: '',
-        //     imageURL: '',
-        //     description: '',
-        //     prepTime: '',
-        //     cookTime: '',
-        //     servingSize: '',
-        //     calories: '',
-        //     authorId: ''
-        // })
+        this.props.addRecipe({...this.state, authorId: this.props.authorId}, this.props.history)
     }
 
     render() {
@@ -92,7 +82,6 @@ const mapStateToProps = state => {
     const authorId = state.currentUser ? state.currentUser.id : ""
     return {
      authorId
-    //  recipes: state.recipes
     }
   }
 
