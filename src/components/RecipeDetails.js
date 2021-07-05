@@ -7,8 +7,7 @@ const RecipeDetails = (props) => {
     console.log(props)
 
     let recipe = props.recipes.filter(recipe => recipe.id == props.match.params.id)[0]
-
-
+    console.log(recipe)
     return (
         <div className="RecipeDetails">
             {/* do i need to make this Edit link visible only to the author? */}
