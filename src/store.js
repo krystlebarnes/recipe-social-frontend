@@ -5,11 +5,7 @@ import users from './reducers/users.js';
 import loginForm from './reducers/loginForm.js';
 import recipes from './reducers/recipes.js';
 import signupForm from './reducers/signupForm.js';
-import recipeForm from './reducers/recipeForm.js';
-import ingredients from './reducers/ingredients.js';
-import ingredientForm from './reducers/ingredientForm.js';
-import instructions from './reducers/instructions.js';
-import instructionForm from './reducers/instructionForm.js'
+import recipeForm from './reducers/recipeForm.js'
 
 
 const reducer = combineReducers({
@@ -18,11 +14,7 @@ const reducer = combineReducers({
   loginForm,
   recipes,
   signupForm,
-  recipeForm,
-  ingredients,
-  ingredientForm,
-  instructions,
-  instructionForm
+  recipeForm
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
