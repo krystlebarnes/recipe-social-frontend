@@ -1,5 +1,4 @@
 import React from 'react'
-import currentUser from '../reducers/currentUser'
 import { Link } from 'react-router-dom'
 
 const RecipeDetails = (props) => {
@@ -7,10 +6,11 @@ const RecipeDetails = (props) => {
     console.log(props)
 
     let recipe = props.recipes.filter(recipe => recipe.id == props.match.params.id)[0]
-    console.log(recipe)
+    
+
     return (
         <div className="RecipeDetails">
-            {/* do i need to make this Edit link visible only to the author? */}
+            {/* i need to make this Edit link visible only to the author */}
             <p><Link to={`/recipes/${recipe.id}/edit`}>Edit recipe</Link></p>
             <h1>{ recipe.attributes.name }</h1>
             <img src={ recipe.attributes.image_url }></img>
