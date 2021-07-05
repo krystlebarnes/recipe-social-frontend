@@ -21,7 +21,6 @@ class EditRecipe extends React.Component {
             calories: recipe.attributes.calories,
             id: recipe.id 
         };
-        debugger
     }
 
     // componentDidMount(){

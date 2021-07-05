@@ -10,8 +10,8 @@ export const editRecipe = (recipeData, history) => {
             calories: recipeData.calories,
             id: parseInt(recipeData.id)
         }
-        debugger
-        return fetch("http://localhost:3000/api/v1/recipes/${recipeData.id}", {
+        
+        return fetch(`http://localhost:3000/api/v1/recipes/${recipeData.id}`, {
             credentials: "include",
             method: "PATCH",
             headers: {

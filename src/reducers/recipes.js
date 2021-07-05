@@ -5,14 +5,7 @@ export default (state = [], action) => {
         case "ADD_RECIPE":
             return [...state, action.payload]
         case "EDIT_RECIPE":
-            let recipes = state.map(recipe => {
-                if (recipe.id === action.payload.id) {
-                    return action.payload
-                } else {
-                    return recipe
-                }
-            })
-            return [...state, recipes]
+            return state.map(recipe => recipe.id === action.payload.id ? action.payload : recipe)
         case "DELETE_RECIPE":
             return state.filter(recipe => recipe.id === action.recipeId ? false : true)
         default:
