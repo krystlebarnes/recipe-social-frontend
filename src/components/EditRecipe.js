@@ -12,13 +12,13 @@ class EditRecipe extends React.Component {
         let recipe = this.props.recipes.filter(recipe => recipe.id == this.props.match.params.id)[0]
    
         this.state = {
-            name: '',
-            imageURL: '',
-            description: '',
-            prepTime: '',
-            cookTime: '',
-            servingSize: '',
-            calories: '',
+            name: recipe.attributes.name,
+            imageURL: recipe.attributes.image_url,
+            description: recipe.attributes.description,
+            prepTime: recipe.attributes.prep_time,
+            cookTime: recipe.attributes.cook_time,
+            servingSize: recipe.attributes.serving_size,
+            calories: recipe.attributes.calories,
             id: recipe.id 
         };
         debugger
