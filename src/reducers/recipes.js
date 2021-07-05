@@ -3,9 +3,16 @@ export default (state = [], action) => {
         case "SET_RECIPES":
             return action.recipes
         case "ADD_RECIPE":
-            return {...state, recipes: [...state.recipes, action.payload]}
+            return [...state, action.payload]
         case "EDIT_RECIPE":
-            return state.map(recipe => recipe.id === action.recipe.id ? action.recipe : recipe)
+            let recipes = state.map(recipe => {
+                if (recipe.id === action.payload.id) {
+                    return action.payload
+                } else {
+                    return recipe
+                }
+            })
+            return [...state, recipes]
         case "DELETE_RECIPE":
             return state.filter(recipe => recipe.id === action.recipeId ? false : true)
         default:

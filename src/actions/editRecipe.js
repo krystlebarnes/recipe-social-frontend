@@ -7,9 +7,11 @@ export const editRecipe = (recipeData, history) => {
             prep_time: recipeData.prepTime,
             cook_time: recipeData.cookTime,
             serving_size: recipeData.servingSize,
-            calories: recipeData.calories
+            calories: recipeData.calories,
+            id: parseInt(recipeData.id)
         }
-        return fetch("http://localhost:3000/api/v1/recipes/${recipeData.recipeId}", {
+        debugger
+        return fetch("http://localhost:3000/api/v1/recipes/${recipeData.id}", {
             credentials: "include",
             method: "PATCH",
             headers: {
@@ -18,13 +20,12 @@ export const editRecipe = (recipeData, history) => {
             body: JSON.stringify(updatedRecipe)
         })
         .then(r => r.json())
-        .then(r => {
-            if (r.error) {
-                alert(r.error)
+        .then(recipe => {
+            if (recipe.error) {
+                alert(recipe.error)
             } else {
-                const recipe = r.data
-                dispatch({type: 'EDIT_RECIPE', recipe})
-                history.push(`/recipes/${r.data.id}`)
+                dispatch({type: 'EDIT_RECIPE', payload: recipe.data})
+                history.push(`/recipes/${recipe.data.id}`)
             }
         })
         .catch(console.log)
